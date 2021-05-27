@@ -1,1 +1,0 @@
-Experiment for "Comparison between different optimization methods"
