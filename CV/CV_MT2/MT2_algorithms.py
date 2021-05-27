@@ -328,7 +328,7 @@ def train_ASVRCD(loss_fn, test_accu_fn, F_grads, fmj_grads, w0, beta0, n_commun,
         if zeta == 1:
             g_w = []
             for i in range(2):
-                g_w.append((fmj_grads_result_x[0][i] - 0.0*fmj_grads_result_v[0][i]) / p_w + fgrv[0][i])
+                g_w.append((fmj_grads_result_x[0][i] - fmj_grads_result_v[0][i]) / p_w + fgrv[0][i])
         else:
             g_w = fgrv[0].copy()
 
@@ -354,7 +354,7 @@ def train_ASVRCD(loss_fn, test_accu_fn, F_grads, fmj_grads, w0, beta0, n_commun,
             for m in range(M):
                 g_beta_m = []
                 for i in range(2):
-                    g_beta_m.append((fmj_grads_result_x[1][m][i] - 0.0*fmj_grads_result_v[1][m][i]) / (p_beta) + fgrv[1][m][i])
+                    g_beta_m.append((fmj_grads_result_x[1][m][i] - fmj_grads_result_v[1][m][i]) / (p_beta) + fgrv[1][m][i])
                 g_beta.append(g_beta_m)
 
         ## Update beta_y
