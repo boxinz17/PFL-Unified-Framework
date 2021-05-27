@@ -235,8 +235,8 @@ def train_SVRCD(loss_fn, test_accu_fn, F_grads, fmj_grads, w0, beta0, n_commun, 
         beta_y = beta_y_new.copy()
 
         # Compute the loss when communication happens
-        if zeta == 1 or coin == 1:
-            k_commun += 1  # communication happens only when zeta=1 or coin=1
+        if zeta == 1:
+            k_commun += 1  # communication happens only when zeta=1
             train_loss.append(loss_fn(w_y, beta_y, train_loader_list, lambda_global, lambda_penal, device))
             test_accu.append(test_accu_fn(w_y, beta_y, val_loader_list, device))
             if k_commun % repo_step == 0 or k_commun == 1:
@@ -375,8 +375,8 @@ def train_ASVRCD(loss_fn, test_accu_fn, F_grads, fmj_grads, w0, beta0, n_commun,
         beta_z = beta_z_new
 
         # Compute the loss when communication happens
-        if zeta == 1 or coin == 1:
-            k_commun += 1  # communication happens only when zeta=1 or coin=1
+        if zeta == 1:
+            k_commun += 1  # communication happens only when zeta=1
             train_loss.append(loss_fn(w_y, beta_y, train_loader_list, lambda_global, lambda_penal, device))
             test_accu.append(test_accu_fn(w_y, beta_y, val_loader_list, device))
             if k_commun % repo_step == 0 or k_commun == 1:
