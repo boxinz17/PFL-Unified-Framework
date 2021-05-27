@@ -39,7 +39,8 @@ n_labels, batch_size=64, rd_seed=rd_seed)
 
 # Initialize parameters for SVRCD-PFL
 mathcal_L_prime = 1.0
-mu = lambda_penal / (3 * M)
+mu_prime = 1e-2
+mu = mu_prime / (3 * M)
 
 mathcal_L_w = lambda_penal / M
 mathcal_L_beta = (mathcal_L_prime + lambda_penal) / M
