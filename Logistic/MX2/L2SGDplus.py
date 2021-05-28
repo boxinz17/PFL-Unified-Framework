@@ -27,8 +27,6 @@ def fmj_grads_MX2_L2SGD(w, X, data_all, lambda_param, index_choice):
         y_data = data_all[m][1][index_choice[m]]
         y_data_prob = logistic.cdf(np.matmul(x_data, X[m,:]))
         beta_grads[m, :] = (y_data_prob - y_data) * x_data
-        beta_grads[m, :] /= M
-        beta_grads[m, :] += (lambda_param / M) * (X[m,:] - w)
     return beta_grads
 
 def L2SGD_optimizer(data_all, est_err, loss_fn, fmj_grads, X_true, X0, eta, p_w, lambda_param, n_commun, repo_period=10):
