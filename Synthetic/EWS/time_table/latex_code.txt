@@ -1,0 +1,9 @@
+\begin{tabular}{llll}
+\toprule
+{} &    5.0  &    10.0 &    15.0 \\
+\midrule
+LSGD   &  238.01 &  237.67 &  234.33 \\
+ASCD   &   17.00 &   16.55 &   16.46 \\
+ASVRCD &   23.35 &   22.12 &   23.51 \\
+\bottomrule
+\end{tabular}
