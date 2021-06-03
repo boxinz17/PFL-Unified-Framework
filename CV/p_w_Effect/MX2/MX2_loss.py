@@ -156,7 +156,6 @@ def F_grads(w, beta_list, train_loader_list, lambda_penal, device):
             
         # Average Local Loss
         loss_device = loss_device / n_count
-        #loss_device = loss_device / len(train_loader)
         
         # Update overall loss
         loss += loss_device

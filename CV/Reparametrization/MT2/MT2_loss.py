@@ -248,13 +248,7 @@ def F_grads(w, beta_list, train_loader_list, lambda_global, lambda_penal, device
         
         loss_device = 0.0
         n_count = 0
-        # batch_index = np.random.choice(len(train_loader)-1)
-        # k_batch = 0
         for imgs, labels in train_loader:
-            # k_batch += 1
-            # if k_batch != (batch_index+1):
-            #     continue
-            
             imgs = imgs.to(device=device)
             labels = labels.to(device=device)
             n_count += len(labels)
@@ -277,7 +271,6 @@ def F_grads(w, beta_list, train_loader_list, lambda_global, lambda_penal, device
             
         # Average Local Loss
         loss_device = loss_device / n_count
-        #loss_device = loss_device / len(train_loader)
         
         # Update overall loss
         loss += loss_device
